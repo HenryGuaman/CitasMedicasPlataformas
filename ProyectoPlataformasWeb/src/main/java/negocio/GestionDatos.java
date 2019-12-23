@@ -69,19 +69,6 @@ public class GestionDatos implements  GestionPacienteRemote ,GestionPacienteLoca
 	{
 		return daoMed.getMedicosNombre(filtro);
 	}
-	
-	
-	
-	
-	
-	
-	@Override
-	public List<Medico> getMedicosNombre() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	
 
 
 	public MedicoDAO getDaoMed() {
@@ -102,13 +89,6 @@ public class GestionDatos implements  GestionPacienteRemote ,GestionPacienteLoca
 	public void setDaoPr(PacienteDAO daoPr) {
 		this.daoPr = daoPr;
 	}
-
-	@Override
-	public List<Paciente> getPacientesNombre() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 	
 
 	@Override
@@ -122,12 +102,5 @@ public class GestionDatos implements  GestionPacienteRemote ,GestionPacienteLoca
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-
-	
-
-	
-
-	
 
 }

@@ -20,24 +20,6 @@ public class BusquedaPacientesBean {
 	
 	private List<Paciente> pacientes;
 	
-	
-	public String BuscarPaciente()
-	{
-		pacientes = gl.getPacientesNombre();
-		return null;
-	}
-
-
-	public GestionPacienteLocal getGl() {
-		return gl;
-	}
-
-
-	public void setGl(GestionPacienteLocal gl) {
-		this.gl = gl;
-	}
-
-
 	public String getFiltro() {
 		return filtro;
 	}
@@ -56,8 +38,14 @@ public class BusquedaPacientesBean {
 	public void setPacientes(List<Paciente> pacientes) {
 		this.pacientes = pacientes;
 	}
-
 	
+
+	public String buscarPaciente() {
+		
+		pacientes = gl.getPacientesNombre(filtro);
+		System.out.println("hola mundo");
+		return filtro;
+	}
 
 	
 

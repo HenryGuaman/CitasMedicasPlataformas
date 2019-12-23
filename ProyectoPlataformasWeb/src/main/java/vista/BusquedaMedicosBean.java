@@ -23,10 +23,10 @@ public class BusquedaMedicosBean {
 	private List<Medico> medicos;
 	
 	
-	public String BuscarPaciente()
+	public String BuscarMedico()
 	{
-		medicos = gl.getMedicosNombre();
-		return null;
+		medicos = gl.getMedicosNombre(filtro);
+		return filtro;
 	}
 
 

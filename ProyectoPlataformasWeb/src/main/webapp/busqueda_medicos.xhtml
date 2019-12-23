@@ -7,49 +7,52 @@
 <h:head></h:head> 
 <body> 
 
-<h1>Pacientes Disponibles</h1>
+<h1>Medicos Disponibles</h1>
 
 
 <h:form>
 
-Filtro de búsqueda : <h:inputText value="#{busquedaPacientesBean.filtro}"/>
-<h:commandButton action="#{busquedaPacientesBean.buscarPaciente()}" value="Buscar" />
+Filtro de búsqueda : <h:inputText value="#{busquedaMedicosBean.filtro}"/>
+<h:commandButton action="#{busquedaMedicosBean.BuscarMedico()}" value="Buscar" />
 
-<h:dataTable value="#{busquedaPacientesBean.pacientes}" var="paciente">
+<h:dataTable value="#{busquedaMedicosBean.medicos}" var="medico">
 
 	<h:column>
-		#{paciente.id}
+		#{medico.id}
 		<f:facet name="header">Id</f:facet>
 	</h:column>
 	<h:column>
-		#{paciente.nombre}
+		#{medico.nombre}
 		<f:facet name="header">Nombre</f:facet>
 	</h:column>
 	<h:column>
-		#{paciente.apellido}
+		#{medico.apellido}
 		<f:facet name="header">Apellido</f:facet>
 	</h:column>
 	<h:column>
-		#{paciente.cedula}
+		#{medico.cedula}
 		<f:facet name="header">Cedula</f:facet>
 	</h:column>
 	<h:column>
-		#{paciente.direccion}
+		#{medico.direccion}
 		<f:facet name="header">Direccion</f:facet>
 	</h:column>
 	<h:column>
-		#{paciente.telefono}
+		#{medico.telefono}
 		<f:facet name="header">Telefono</f:facet>
 	</h:column>
 	<h:column>
-		#{paciente.email}
+		#{medico.email}
 		<f:facet name="header">Email</f:facet>
 	</h:column>
-
+	<h:column>
+		#{medico.area}
+		<f:facet name="header">Area</f:facet>
+	</h:column>
 </h:dataTable>
 
 
-<h:commandButton value="Regresar" action="guardar_paciente">
+<h:commandButton value="Regresar" action="guardar_medico">
 </h:commandButton>
 
 </h:form>
