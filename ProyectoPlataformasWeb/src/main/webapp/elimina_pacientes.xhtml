@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head></h:head> 
+<body> 
+
+<h1>Eliminar Pacientes</h1>
+
+
+<h:form>
+
+Filtro de búsqueda : <h:inputText value="#{eliminaLibrosBean.filtro}"/>
+<h:commandButton action="#{eliminaLibrosBean.eliminaLibro()}" value="Eliminar"/>
+
+<h:dataTable value="#{gestionLibrosBean.libros}" var="libro">
+
+		<h:column>
+			#{libro.codigo}
+			<f:facet name="header">Codigo</f:facet>
+		</h:column>>
+	
+		<h:column>
+			#{libro.titulo}
+			<f:facet name="header">Titulo</f:facet>
+		</h:column>
+		
+		<h:column>
+			#{libro.autor}
+			<f:facet name="header">Autor</f:facet>
+		</h:column>
+		
+		<h:column>
+			#{libro.categoria}
+			<f:facet name="header">Categoria</f:facet>
+		</h:column>
+		
+		<h:column>
+			#{libro.editorial}
+			<f:facet name="header">Editorial</f:facet>
+		</h:column>
+		
+		
+</h:dataTable>	
+
+
+<h:commandButton value="Regresar" action="guardar-libro">
+</h:commandButton>
+
+</h:form>
+
+</body> 
+</html>

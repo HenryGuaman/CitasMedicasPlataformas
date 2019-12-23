@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head></h:head> 
+<body> 
+<h:form> 
+	<h1>Medicos Guardados</h1>
+	
+	<h:dataTable value="#{gestioMedicosBean.medicos}" var="medico">
+
+		<h:column>
+			#{medico.id}
+			<f:facet name="header">Id</f:facet>
+		</h:column>
+	
+		<h:column>
+			#{medico.nombre}
+			<f:facet name="header">Nombre</f:facet>
+		</h:column>
+		<h:column>
+			#{medico.apellido}
+			<f:facet name="header">apellido</f:facet>
+		</h:column>
+	
+		<h:column>
+			#{medico.cedula}
+			<f:facet name="header">cedula</f:facet>
+		</h:column>
+		<h:column>
+			#{medico.direccion}
+			<f:facet name="header">direccion</f:facet>
+		</h:column>
+	
+		<h:column>
+			#{medico.telefono}
+			<f:facet name="header">Telefono</f:facet>
+		</h:column>
+		<h:column>
+			#{medico.email}
+			<f:facet name="header">email</f:facet>
+		</h:column>
+		<h:column>
+			#{medico.area}
+			<f:facet name="header">area</f:facet>
+		</h:column>
+		
+		
+</h:dataTable>	
+<h:commandButton value="Regresar" action="guardar_medico">
+</h:commandButton>
+</h:form>
+
+</body> 
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head></h:head> 
+<body> 
+
+<h1>Guardar Paciente</h1>
+
+<h:form>
+		<h:outputLabel value="id">
+		</h:outputLabel>
+		
+		<h:inputText value="#{gestionPacientesBean.id}">
+		</h:inputText>
+		<br></br>
+		
+		<h:outputLabel value="nombre">
+		</h:outputLabel>
+		
+		<h:inputText value="#{gestionPacientesBean.nombre}">
+		</h:inputText>
+		<br></br>
+		<h:outputLabel value="apellido">
+		</h:outputLabel>
+		
+		<h:inputText value="#{gestionPacientesBean.apellido}">
+		</h:inputText>
+		<br></br>
+		<h:outputLabel value="cedula">
+		</h:outputLabel>
+		
+		<h:inputText value="#{gestionPacientesBean.cedula}">
+		</h:inputText>
+		<br></br>
+		<h:outputLabel value="direccion">
+		</h:outputLabel>
+		
+		<h:inputText value="#{gestionPacientesBean.direccion}">
+		</h:inputText>
+		<br></br>
+		<h:outputLabel value="telefono">
+		</h:outputLabel>
+		
+		<h:inputText value="#{gestionPacientesBean.telefono}">
+		</h:inputText>
+		<br></br>
+		<h:outputLabel value="email">
+		</h:outputLabel>
+		
+		<h:inputText value="#{gestionPacientesBean.email}">
+		</h:inputText>
+		<br></br>
+		
+		
+		
+		<h:commandButton value="Guardar" action="#{gestionPacientesBean.guardarPaciente()}">
+		</h:commandButton>
+	</h:form>
+
+</body> 
+</html>
