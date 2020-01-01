@@ -1,69 +1,73 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
-<html xmlns="http://www.w3.org/1999/xhtml"
+
+
+	<ui:composition xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html"> 
-
-<h:head></h:head> 
-<body> 
-
-<h1>Guardar Medico</h1>
-
-<h:form>
-		<h:outputLabel value="id">
-		</h:outputLabel>
+      xmlns:h="http://java.sun.com/jsf/html"
+		template="blank.xhtml">
 		
-		<h:inputText value="#{gestioMedicosBean.id}">
-		</h:inputText>
-		<br></br>
-		
-		<h:outputLabel value="nombre">
-		</h:outputLabel>
-		
-		<h:inputText value="#{gestioMedicosBean.nombre}">
-		</h:inputText>
-		<br></br>
-		<h:outputLabel value="apellido">
-		</h:outputLabel>
-		
-		<h:inputText value="#{gestioMedicosBean.apellido}">
-		</h:inputText>
-		<br></br>
-		<h:outputLabel value="cedula">
-		</h:outputLabel>
-		
-		<h:inputText value="#{gestioMedicosBean.cedula}">
-		</h:inputText>
-		<br></br>
-		<h:outputLabel value="direccion">
-		</h:outputLabel>
-		
-		<h:inputText value="#{gestioMedicosBean.direccion}">
-		</h:inputText>
-		<br></br>
-		<h:outputLabel value="telefono">
-		</h:outputLabel>
-		
-		<h:inputText value="#{gestioMedicosBean.telefono}">
-		</h:inputText>
-		<br></br>
-		<h:outputLabel value="email">
-		</h:outputLabel>
-		
-		<h:inputText value="#{gestioMedicosBean.email}">
-		</h:inputText>
-		<br></br>
-		<h:outputLabel value="area">
-		</h:outputLabel>
-		
-		<h:inputText value="#{gestioMedicosBean.area}">
-		</h:inputText>
-		<br></br>
-		
-		
-		<h:commandButton value="Guardar" action="#{gestioMedicosBean.guardarMedico()}">
-		</h:commandButton>
+		<ui:define name = "titulo">Guardar Medico</ui:define>
+	<ui:define name = "contenido"> 
+	
+	<h:form>
+        
+         <div class="card-body">
+                  <div class="form-group row">
+                    <label for="inputId" class="col-sm-2 col-form-label">Id</label>
+                    <div class="col-sm-10">
+                    <h:inputText value="#{gestioMedicosBean.id}" class="form-control" id = "id"></h:inputText>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputName" class="col-sm-2 col-form-label">Nombre</label>
+                    <div class="col-sm-10">
+                      <h:inputText value="#{gestioMedicosBean.nombre}" class="form-control" id = "nombre"></h:inputText>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputLstNAme" class="col-sm-2 col-form-label">Apellido</label>
+                    <div class="col-sm-10">
+                    <h:inputText value="#{gestioMedicosBean.apellido}" class="form-control" id = "apellido"></h:inputText>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputCed" class="col-sm-2 col-form-label">Cedula</label>
+                    <div class="col-sm-10">
+                      <h:inputText value="#{gestioMedicosBean.cedula}" class="form-control" id = "cedula"></h:inputText>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputAddress" class="col-sm-2 col-form-label">Direccion</label>
+                    <div class="col-sm-10">
+                    <h:inputText value="#{gestioMedicosBean.direccion}" class="form-control" id = "direccion"></h:inputText>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputPhone" class="col-sm-2 col-form-label">Telefono</label>
+                    <div class="col-sm-10">
+                      <h:inputText value="#{gestioMedicosBean.telefono}" class="form-control" id = "telefono"></h:inputText>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
+                    <div class="col-sm-10">
+                    <h:inputText value="#{gestioMedicosBean.email}" class="form-control" id = "email"></h:inputText>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputArea" class="col-sm-2 col-form-label">Area</label>
+                    <div class="col-sm-10">
+                      <h:inputText value="#{gestioMedicosBean.area}" class="form-control" id = "area"></h:inputText>
+                    </div>
+                  </div>
+                  <div class="card-footer">
+			        <h:commandButton value="Guardar" action="#{gestioMedicosBean.guardarMedico()}" class="btn btn-primary">
+					</h:commandButton>
+        		  </div>
+         </div>
+         
 	</h:form>
-
-</body> 
-</html>
+	
+	</ui:define>
+	
+	</ui:composition>

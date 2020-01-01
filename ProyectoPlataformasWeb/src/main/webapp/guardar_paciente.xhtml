@@ -1,15 +1,14 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
-<html xmlns="http://www.w3.org/1999/xhtml"
+
+	<ui:composition xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html"> 
-
-<h:head></h:head> 
-<body> 
-
-<h1>Guardar Paciente</h1>
-
-<h:form>
+      xmlns:h="http://java.sun.com/jsf/html"
+       template="blank.xhtml">
+	
+	<ui:define name = "titulo">Guardar Paciente</ui:define>
+	<ui:define name = "contenido"> 
+	
+		<h:form>
 		<h:outputLabel value="id">
 		</h:outputLabel>
 		
@@ -59,6 +58,8 @@
 		<h:commandButton value="Guardar" action="#{gestionPacientesBean.guardarPaciente()}">
 		</h:commandButton>
 	</h:form>
-
-</body> 
-</html>
+	
+	</ui:define>
+	
+	
+	</ui:composition>
