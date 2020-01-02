@@ -6,16 +6,18 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 
+import datos.CajaDAO;
 import datos.CitaMedicaDAO;
 import datos.MedicoDAO;
 import datos.PacienteDAO;
+import modelo.Caja;
 import modelo.CitaMedica;
 import modelo.Medico;
 import modelo.Paciente;
 
 
 @Stateless
-public class GestionDatos implements  GestionPacienteRemote ,GestionPacienteLocal,GestionMedicoLocal, GestionMedicoRemote,GestionCitaMedicaLocal, GestionCitaMedicaRemote {
+public class GestionDatos implements  GestionPacienteRemote ,GestionPacienteLocal,GestionMedicoLocal, GestionMedicoRemote,GestionCitaMedicaLocal, GestionCitaMedicaRemote,GestionCajaLocal, GestionCajaRemote {
 	
 	
 	@Inject
@@ -24,6 +26,9 @@ public class GestionDatos implements  GestionPacienteRemote ,GestionPacienteLoca
 	private MedicoDAO daoMed;
 	@Inject
 	private CitaMedicaDAO daoCiM;
+	
+	@Inject
+	private CajaDAO daoCaj;
 	
 	
 	//metodos para pacientes
@@ -66,6 +71,7 @@ public class GestionDatos implements  GestionPacienteRemote ,GestionPacienteLoca
 		daoCiM.insert(cm);
 	}
 	
+	
 	public List<CitaMedica> getCitasMedicas(){
 		return daoCiM.getCitasMedicas();
 	}
@@ -75,6 +81,28 @@ public class GestionDatos implements  GestionPacienteRemote ,GestionPacienteLoca
 		return daoCiM.getCitasMedicasNombre(filtro);
 	}
 	
+	// metodos para caja
+		public void guardarCaja(int codigo, String fecha,double totalIngresos, double totalEgresos, double total){
+			Caja c = new Caja();
+			c.setId(codigo);
+			c.setFecha(fecha);
+			c.setTotalIngresos(totalIngresos);
+			c.setTotalEgresos(totalEgresos);
+			c.setTotal(total);
+			daoCaj.insert(c);
+		}
+		
+		
+		public List<Caja> getCaja(){
+			return daoCaj.getCajas();
+		}
+		
+		public List<Caja> getCajaNombre(String filtro)
+		{
+			return daoCaj.getCajaNombre(filtro);
+		}
+		
+		
 	//metodos para medicos
 	
 	public void guardarMedico(int codigo,String nombre, String apellido, String cedula, String direccion, String telefono,String email, String area){
@@ -158,6 +186,12 @@ public class GestionDatos implements  GestionPacienteRemote ,GestionPacienteLoca
 
 	 @Override
 	public List<CitaMedica> getCitaMedica() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Caja> getCajas() {
 		// TODO Auto-generated method stub
 		return null;
 	}
