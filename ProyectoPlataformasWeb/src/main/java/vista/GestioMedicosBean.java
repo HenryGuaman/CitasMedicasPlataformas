@@ -26,6 +26,7 @@ public class GestioMedicosBean {
 	private String telefono;
 	private String email;
 	private String area;
+	private String clave;
 	private List<Medico> medicos;
 	
 	@PostConstruct
@@ -35,7 +36,7 @@ public class GestioMedicosBean {
 	
 	
 	public String guardarMedico() {
-		Gd.guardarMedico(id, nombre, apellido, cedula, direccion, telefono, email,area);
+		Gd.guardarMedico(id, nombre, apellido, cedula, direccion, telefono, email,area,clave);
 		medicos= Gd.getMedicos();
 		
 		return "listar_medico";
@@ -139,6 +140,16 @@ public class GestioMedicosBean {
 
 	public void setMedicos(List<Medico> medicos) {
 		this.medicos = medicos;
+	}
+
+
+	public String getClave() {
+		return clave;
+	}
+
+
+	public void setClave(String clave) {
+		this.clave = clave;
 	}
 	
 	

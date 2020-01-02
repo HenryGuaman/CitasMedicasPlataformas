@@ -22,6 +22,7 @@ public class Medico implements Serializable{
 	private String telefono;
 	private String email;
 	private String area;
+	private String clave;
 	
 	
 	
@@ -30,6 +31,12 @@ public class Medico implements Serializable{
 	
 	
 	
+	public String getClave() {
+		return clave;
+	}
+	public void setClave(String clave) {
+		this.clave = clave;
+	}
 	public String getArea() {
 		return area;
 	}
@@ -85,8 +92,10 @@ public class Medico implements Serializable{
 	@Override
 	public String toString() {
 		return "Medico [id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", cedula=" + cedula
-				+ ", direccion=" + direccion + ", telefono=" + telefono + ", email=" + email + ", area=" + area + "]";
+				+ ", direccion=" + direccion + ", telefono=" + telefono + ", email=" + email + ", area=" + area
+				+ ", clave=" + clave + "]";
 	}
+	
 	
 	
 

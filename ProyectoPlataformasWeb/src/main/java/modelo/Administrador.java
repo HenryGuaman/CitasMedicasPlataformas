@@ -6,7 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class Paciente implements Serializable{
+public class Administrador implements Serializable{
 	
 	
 	/**
@@ -25,17 +25,6 @@ public class Paciente implements Serializable{
 	
 	
 	
-	
-	
-	
-	
-	
-	public String getClave() {
-		return clave;
-	}
-	public void setClave(String clave) {
-		this.clave = clave;
-	}
 	public int getId() {
 		return id;
 	}
@@ -79,12 +68,19 @@ public class Paciente implements Serializable{
 		this.email = email;
 	}
 	
+	
+	public String getClave() {
+		return clave;
+	}
+	public void setClave(String clave) {
+		this.clave = clave;
+	}
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
 	@Override
 	public String toString() {
-		return "Paciente [id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", cedula=" + cedula
+		return "Administrador [id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", cedula=" + cedula
 				+ ", direccion=" + direccion + ", telefono=" + telefono + ", email=" + email + ", clave=" + clave + "]";
 	}
 	

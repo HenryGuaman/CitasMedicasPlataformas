@@ -5,15 +5,17 @@ import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.inject.Inject;
 
+import negocio.GestionAdministradorLocal;
 import negocio.GestionPacienteLocal;
+import modelo.Administrador;
 import modelo.Paciente;
 
 @ManagedBean
-public class GestionPacientesBean {
+public class GestionAdministradorBean {
 	
 	
 	@Inject
-	private GestionPacienteLocal Gd;
+	private GestionAdministradorLocal Gd;
 	
 	/*Bean Properties*/
 	private int id;
@@ -25,32 +27,23 @@ public class GestionPacientesBean {
 	private String email;
 	private String clave;
 	
-	
-	private List<Paciente> pacientes;
+	private List<Administrador> administradores;
 	
 	@PostConstruct
 	public void init() {
-		pacientes= Gd.getPacientes(); 
+		administradores= Gd.getAdministradores();
 	}
 	
 	
-	public String guardarPaciente() {
-		Gd.guardarPaciente(id, nombre, apellido, cedula, direccion, telefono, email, clave);
-		pacientes= Gd.getPacientes(); 
+	public String guardarAdministrador() {
+		Gd.guardarAdministrador(id, nombre, apellido, cedula, direccion, telefono, email, clave);
+		administradores=Gd.getAdministradores();
 		
-		return "listar_pacientes";
+		return "listar_administradores";
 	}
 
 
-	public GestionPacienteLocal getGd() {
-		return Gd;
-	}
-
-
-	public void setGd(GestionPacienteLocal gd) {
-		Gd = gd;
-	}
-
+	
 
 	public int getId() {
 		return id;
@@ -105,17 +98,6 @@ public class GestionPacientesBean {
 	public String getTelefono() {
 		return telefono;
 	}
-	
-
-
-	public String getClave() {
-		return clave;
-	}
-
-
-	public void setClave(String clave) {
-		this.clave = clave;
-	}
 
 
 	public void setTelefono(String telefono) {
@@ -133,14 +115,35 @@ public class GestionPacientesBean {
 	}
 
 
-	public List<Paciente> getPacientes() {
-		return pacientes;
+	public GestionAdministradorLocal getGd() {
+		return Gd;
 	}
 
 
-	public void setPacientes(List<Paciente> pacientes) {
-		this.pacientes = pacientes;
+	public void setGd(GestionAdministradorLocal gd) {
+		Gd = gd;
 	}
+
+
+	public String getClave() {
+		return clave;
+	}
+
+
+	public void setClave(String clave) {
+		this.clave = clave;
+	}
+
+
+	public List<Administrador> getAdministradores() {
+		return administradores;
+	}
+
+
+	public void setAdministradores(List<Administrador> administradores) {
+		this.administradores = administradores;
+	}
+
 
 
 	

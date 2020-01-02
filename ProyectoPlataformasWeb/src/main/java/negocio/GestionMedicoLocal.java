@@ -9,7 +9,7 @@ import modelo.Medico;
 @Local
 public interface GestionMedicoLocal {
 	
-	public void guardarMedico(int codigo,String nombre, String apellido, String cedula, String direccion, String telefono,String email, String area);
+	public void guardarMedico(int codigo,String nombre, String apellido, String cedula, String direccion, String telefono,String email, String area,String clave);
 	public List<Medico> getMedicos();
 	public List<Medico> getMedicosNombre(String filtro);
 }

@@ -6,10 +6,12 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 
+import datos.AdministradorDAO;
 import datos.CajaDAO;
 import datos.CitaMedicaDAO;
 import datos.MedicoDAO;
 import datos.PacienteDAO;
+import modelo.Administrador;
 import modelo.Caja;
 import modelo.CitaMedica;
 import modelo.Medico;
@@ -17,7 +19,7 @@ import modelo.Paciente;
 
 
 @Stateless
-public class GestionDatos implements  GestionPacienteRemote ,GestionPacienteLocal,GestionMedicoLocal, GestionMedicoRemote,GestionCitaMedicaLocal, GestionCitaMedicaRemote,GestionCajaLocal, GestionCajaRemote {
+public class GestionDatos implements  GestionPacienteRemote ,GestionPacienteLocal,GestionMedicoLocal, GestionMedicoRemote,GestionCitaMedicaLocal, GestionCitaMedicaRemote,GestionCajaLocal, GestionCajaRemote, GestionAdministradorLocal, GestionAdministradorRemote {
 	
 	
 	@Inject
@@ -30,10 +32,11 @@ public class GestionDatos implements  GestionPacienteRemote ,GestionPacienteLoca
 	@Inject
 	private CajaDAO daoCaj;
 	
-	
+	@Inject
+	private AdministradorDAO daoAdm;	
 	//metodos para pacientes
 	
-	public void guardarPaciente(int codigo,String nombre, String apellido, String cedula, String direccion, String telefono,String email){
+	public void guardarPaciente(int codigo,String nombre, String apellido, String cedula, String direccion, String telefono,String email, String clave){
 		Paciente P = new Paciente();
 		P.setId(codigo);
 		P.setNombre(nombre);
@@ -42,6 +45,7 @@ public class GestionDatos implements  GestionPacienteRemote ,GestionPacienteLoca
 		P.setDireccion(direccion);
 		P.setTelefono(telefono);
 		P.setEmail(email);
+		P.setClave(clave);
 		daoPr.insert(P);
 	}
 	
@@ -59,6 +63,36 @@ public class GestionDatos implements  GestionPacienteRemote ,GestionPacienteLoca
 		System.out.println("Metodo eliminar");
 		daoPr.remove(codigo);
 	}
+	
+	//metodos para administrador
+
+		public void guardarAdministrador(int codigo,String nombre, String apellido, String cedula, String direccion, String telefono,String email, String clave){
+			Administrador ad= new Administrador();
+			ad.setId(codigo);
+			ad.setNombre(nombre);
+			ad.setApellido(apellido);
+			ad.setCedula(cedula);
+			ad.setDireccion(direccion);
+			ad.setTelefono(telefono);
+			ad.setEmail(email);
+			ad.setClave(clave);
+			daoAdm.insert(ad);
+		}
+		
+		public List<Administrador> getAdministradores(){
+			return daoAdm.getAdministradores();
+		}
+		
+		public List<Administrador> getAdministradorNombre(String filtro)
+		{
+			return daoAdm.getPacientesNombre(filtro);
+		}
+		
+		public void eliminaAdministradorNombre(int codigo)
+		{
+			System.out.println("Metodo eliminar");
+			daoAdm.remove(codigo);
+		}
 
 	// metodos para citas medicas
 	public void guardarCitaMedica(int codigo,Paciente paciente, Medico medico, String fecha, String turno){
@@ -105,7 +139,7 @@ public class GestionDatos implements  GestionPacienteRemote ,GestionPacienteLoca
 		
 	//metodos para medicos
 	
-	public void guardarMedico(int codigo,String nombre, String apellido, String cedula, String direccion, String telefono,String email, String area){
+	public void guardarMedico(int codigo,String nombre, String apellido, String cedula, String direccion, String telefono,String email, String area, String clave){
 		Medico m = new Medico(); 
 		m.setId(codigo);
 		m.setNombre(nombre);
@@ -115,6 +149,7 @@ public class GestionDatos implements  GestionPacienteRemote ,GestionPacienteLoca
 		m.setTelefono(telefono);
 		m.setEmail(email);
 		m.setArea(area);
+		m.setClave(clave);
 		daoMed.insert(m);
 		
 		
@@ -181,6 +216,12 @@ public class GestionDatos implements  GestionPacienteRemote ,GestionPacienteLoca
 
 	@Override
 	public List<Caja> getCajas() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Administrador> getAdministrador() {
 		// TODO Auto-generated method stub
 		return null;
 	}
