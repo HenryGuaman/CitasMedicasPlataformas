@@ -16,11 +16,15 @@ public class EliminaPacientesBean {
 	private String filtro;
 	private int codigo;
 	
-	public String eliminaPaciente() {
+	public int eliminaPaciente() {
+		
 		System.out.println("Entrandooooo");
+		gl.getPacientes();
 		gl.eliminaPacientesNombre(codigo);
 		
-		return filtro;
+		
+		return 1;
+		
 	}
 
 	public GestionPacienteLocal getGl() {

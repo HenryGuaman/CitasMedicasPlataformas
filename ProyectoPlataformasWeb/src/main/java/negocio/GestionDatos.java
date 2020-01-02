@@ -22,7 +22,6 @@ public class GestionDatos implements  GestionPacienteRemote ,GestionPacienteLoca
 	private PacienteDAO daoPr;
 	@Inject
 	private MedicoDAO daoMed;
-	
 	@Inject
 	private CitaMedicaDAO daoCiM;
 	
