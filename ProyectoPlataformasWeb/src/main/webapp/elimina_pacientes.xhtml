@@ -12,8 +12,7 @@
 
 <h:form>
 
-Filtro de búsqueda : <h:inputText value="#{eliminaPacientesBean.filtro}"/>
-<h:commandButton action="#{eliminaPacientesBean.eliminaPaciente()}" value="Eliminar"/>
+
 
 <h:dataTable value="#{gestionPacientesBean.pacientes}" var="paciente">
 
@@ -51,6 +50,9 @@ Filtro de búsqueda : <h:inputText value="#{eliminaPacientesBean.filtro}"/>
 		
 		
 </h:dataTable>	
+
+Filtro de búsqueda : <h:inputText value="#{eliminaPacientesBean.codigo}"/>
+<h:commandButton action="#{eliminaPacientesBean.eliminaPaciente()}" value="Eliminar"/>
 
 
 <h:commandButton value="Regresar" action="guardar_pacientes">
