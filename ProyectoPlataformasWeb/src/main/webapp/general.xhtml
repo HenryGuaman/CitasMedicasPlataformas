@@ -1,0 +1,34 @@
+
+
+	<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+		template="blank.xhtml">
+		
+		<ui:define name = "titulo">Sistema Gestion Medico</ui:define>
+	<ui:define name = "contenido"> 
+	
+	<h:form>
+        
+         <div class="card-body">
+                
+                  <div class="card-footer">
+			        <h:commandButton value="Crear Paciente" action="guardar_paciente" class="btn btn-primary">
+					</h:commandButton>
+        		  </div>
+        		  <div class="card-footer">
+			        <h:commandButton value="Crear Medico" action="guardar_medico" class="btn btn-primary">
+					</h:commandButton>
+        		  </div>
+        		  <div class="card-footer">
+			        <h:commandButton value="Generar  Cita Medica" action="guardarCitaMedica" class="btn btn-primary">
+					</h:commandButton>
+        		  </div>
+         </div>
+         
+	</h:form>
+	
+	</ui:define>
+	
+	</ui:composition>
