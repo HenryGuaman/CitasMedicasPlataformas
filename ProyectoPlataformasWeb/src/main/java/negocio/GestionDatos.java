@@ -47,6 +47,12 @@ public class GestionDatos implements  GestionPacienteRemote ,GestionPacienteLoca
 		return daoPr.getPacientesNombre(filtro);
 	}
 	
+	public void eliminaPacientesNombre(int codigo)
+	{
+		System.out.println("Metodo eliminar");
+		daoPr.remove(codigo);
+	}
+	
 	public void guardarMedico(int codigo,String nombre, String apellido, String cedula, String direccion, String telefono,String email, String area){
 		Medico m = new Medico(); 
 		m.setId(codigo);
@@ -102,5 +108,7 @@ public class GestionDatos implements  GestionPacienteRemote ,GestionPacienteLoca
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	
 
 }

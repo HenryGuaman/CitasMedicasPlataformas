@@ -11,4 +11,5 @@ public interface GestionPacienteLocal {
 	public void guardarPaciente(int codigo,String nombre, String apellido, String cedula, String direccion, String telefono,String email);
 	public List<Paciente> getPacientes();
 	public List<Paciente> getPacientesNombre(String filtro);
+	public void eliminaPacientesNombre(int codigo);
 }

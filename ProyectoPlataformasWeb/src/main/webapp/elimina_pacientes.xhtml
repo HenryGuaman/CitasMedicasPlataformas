@@ -12,41 +12,48 @@
 
 <h:form>
 
-Filtro de búsqueda : <h:inputText value="#{eliminaLibrosBean.filtro}"/>
-<h:commandButton action="#{eliminaLibrosBean.eliminaLibro()}" value="Eliminar"/>
+Filtro de búsqueda : <h:inputText value="#{eliminaPacientesBean.filtro}"/>
+<h:commandButton action="#{eliminaPacientesBean.eliminaPaciente()}" value="Eliminar"/>
 
-<h:dataTable value="#{gestionLibrosBean.libros}" var="libro">
+<h:dataTable value="#{gestionPacientesBean.pacientes}" var="paciente">
 
 		<h:column>
-			#{libro.codigo}
-			<f:facet name="header">Codigo</f:facet>
-		</h:column>>
+			#{paciente.id}
+			<f:facet name="header">Id</f:facet>
+		</h:column>
 	
 		<h:column>
-			#{libro.titulo}
-			<f:facet name="header">Titulo</f:facet>
+			#{paciente.nombre}
+			<f:facet name="header">Nombre</f:facet>
 		</h:column>
-		
 		<h:column>
-			#{libro.autor}
-			<f:facet name="header">Autor</f:facet>
+			#{paciente.apellido}
+			<f:facet name="header">apellido</f:facet>
 		</h:column>
-		
+	
 		<h:column>
-			#{libro.categoria}
-			<f:facet name="header">Categoria</f:facet>
+			#{paciente.cedula}
+			<f:facet name="header">cedula</f:facet>
 		</h:column>
-		
 		<h:column>
-			#{libro.editorial}
-			<f:facet name="header">Editorial</f:facet>
+			#{paciente.direccion}
+			<f:facet name="header">direccion</f:facet>
+		</h:column>
+	
+		<h:column>
+			#{paciente.telefono}
+			<f:facet name="header">Telefono</f:facet>
+		</h:column>
+		<h:column>
+			#{paciente.email}
+			<f:facet name="header">email</f:facet>
 		</h:column>
 		
 		
 </h:dataTable>	
 
 
-<h:commandButton value="Regresar" action="guardar-libro">
+<h:commandButton value="Regresar" action="guardar_pacientes">
 </h:commandButton>
 
 </h:form>
