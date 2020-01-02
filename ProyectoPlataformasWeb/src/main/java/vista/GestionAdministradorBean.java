@@ -39,7 +39,7 @@ public class GestionAdministradorBean {
 		Gd.guardarAdministrador(id, nombre, apellido, cedula, direccion, telefono, email, clave);
 		administradores=Gd.getAdministradores();
 		
-		return "listar_administradores";
+		return "listar_administrador";
 	}
 
 

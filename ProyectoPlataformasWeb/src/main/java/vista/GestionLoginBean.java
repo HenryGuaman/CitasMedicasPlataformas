@@ -10,8 +10,10 @@ import javax.faces.bean.SessionScoped;
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
+import modelo.Administrador;
 import modelo.Medico;
 import modelo.Paciente;
+import negocio.GestionAdministradorLocal;
 import negocio.GestionMedicoLocal;
 import negocio.GestionPacienteLocal;
 import utils.SessionUtils;
@@ -38,7 +40,7 @@ public class GestionLoginBean implements Serializable {
 		
 		Paciente paciente= this.validarLoginPaciente();
 		Medico medico=this.validarLoginMedico();
-		//Administrador administrador=this.validarLoginAdministrador();
+		Administrador administrador=this.validarLoginAdministrador();
 		
 		if(paciente != null) {
 			HttpSession session = SessionUtils.getSession();
@@ -140,5 +142,18 @@ public class GestionLoginBean implements Serializable {
 	public void setNameUser(String nameUser) {
 		this.nameUser = nameUser;
 	}
+
+	public GestionAdministradorLocal getGal() {
+		return gal;
+	}
+
+	public void setGal(GestionAdministradorLocal gal) {
+		this.gal = gal;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+	
 	
 }
