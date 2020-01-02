@@ -37,7 +37,7 @@ public class GestioCajaBean {
 		
 		Gd.guardarCaja(id, fecha, totalIngresos, totalEgresos, total);
 		caja=Gd.getCajas();
-		return "listar_medico";
+		return "listar_caja";
 	}
 
 

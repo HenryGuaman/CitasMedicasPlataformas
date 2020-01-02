@@ -1,0 +1,46 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+       template="blank.xhtml">
+	
+	<ui:define name = "titulo">Lista Datos Caja</ui:define>
+	<ui:define name = "contenido"> 
+	
+	<h:form> 
+	
+	<h:dataTable value="#{gestioCajaBean.caja}" var="caja">
+
+		<h:column>
+			#{caja.id}
+			<f:facet name="header">Id</f:facet>
+		</h:column>
+	
+		<h:column>
+			#{caja.fecha}
+			<f:facet name="header">Fecha</f:facet>
+		</h:column>
+		<h:column>
+			#{caja.totalIngresos}
+			<f:facet name="header">Total Ingresos</f:facet>
+		</h:column>
+	
+		<h:column>
+			#{caja.totalEgresos}
+			<f:facet name="header">Total Egresos</f:facet>
+		</h:column>
+		<h:column>
+			#{caja.total}
+			<f:facet name="header">Total</f:facet>
+		</h:column>
+		
+		
+</h:dataTable>	
+<h:commandButton value="Regresar" action="Caja">
+</h:commandButton>
+</h:form>
+	
+	</ui:define>
+	
+	
+	</ui:composition>

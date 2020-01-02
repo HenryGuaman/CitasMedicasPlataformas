@@ -42,7 +42,7 @@ public class CajaDAO {
 	public Caja read(int codigo)
 	{
 		Caja c=em.find(Caja.class, codigo);
-		return cs;
+		return c;
 	}
 	
 	
