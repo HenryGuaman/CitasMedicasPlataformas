@@ -11,4 +11,5 @@ public interface GestionMedicoRemote {
 	
 	public void guardarMedico(int codigo,String nombre, String apellido, String cedula, String direccion, String telefono,String email, String area, String clave);
 	public List<Medico> getMedico();
+	public void eliminaMedicosNombre(int codigo);
 }
