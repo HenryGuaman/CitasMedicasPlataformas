@@ -1,0 +1,73 @@
+
+	<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+		template="blank.xhtml">
+		
+		<ui:define name = "titulo">Eliminar Medicos</ui:define>
+	<ui:define name = "contenido"> 
+	
+<h:form>
+        
+         <div class="card-body">
+                  <div class="form-group row">
+                    <label for="inputId" class="col-sm-2 col-form-label"> Filtro de busqueda : </label>
+                    <div class="col-sm-10">
+                    <h:inputText value="#{eliminaMedicosBean.codigo}" class="form-control"/>
+                    <h:commandButton action="#{eliminaMedicosBean.eliminaMedico()}" class="btn btn-primary" value="Eliminar"/>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <h:dataTable value="#{gestioMedicosBean.medicos}" var="medico">
+		
+						<h:column>
+							#{medico.id}
+							<f:facet name="header">Id</f:facet>
+						</h:column>
+					
+						<h:column>
+							#{medico.nombre}
+							<f:facet name="header">Nombre</f:facet>
+						</h:column>
+						<h:column>
+							#{medico.apellido}
+							<f:facet name="header">apellido</f:facet>
+						</h:column>
+					
+						<h:column>
+							#{medico.cedula}
+							<f:facet name="header">cedula</f:facet>
+						</h:column>
+						<h:column>
+							#{medico.direccion}
+							<f:facet name="header">direccion</f:facet>
+						</h:column>
+					
+						<h:column>
+							#{medico.telefono}
+							<f:facet name="header">Telefono</f:facet>
+						</h:column>
+						<h:column>
+							#{medico.email}
+							<f:facet name="header">Email</f:facet>
+						</h:column>
+						<h:column>
+							#{medico.area}
+							<f:facet name="header">Area</f:facet>
+						</h:column>
+				
+					</h:dataTable>
+                  </div>
+                  <div class="card-footer">
+		                  <h:commandButton value="Regresar" action="guardar_medico" class="btn btn-primary">
+							</h:commandButton>
+        		  </div>
+         </div>
+         
+	</h:form>
+	
+
+	</ui:define>
+	
+	</ui:composition>

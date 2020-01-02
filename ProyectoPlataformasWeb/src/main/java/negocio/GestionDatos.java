@@ -101,7 +101,18 @@ public class GestionDatos implements  GestionPacienteRemote ,GestionPacienteLoca
 		return daoMed.getMedicosNombre(filtro);
 	}
 
+	public void eliminaMedicosNombre(int codigo)
+	{
+		System.out.println("Metodo eliminar");
+		daoMed.remove(codigo);
+	}
 
+	
+	
+	
+	
+	
+	
 	public MedicoDAO getDaoMed() {
 		return daoMed;
 	}
