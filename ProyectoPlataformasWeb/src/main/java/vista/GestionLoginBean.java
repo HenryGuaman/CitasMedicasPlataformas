@@ -46,7 +46,7 @@ public class GestionLoginBean implements Serializable {
 			HttpSession session = SessionUtils.getSession();
 			session.setAttribute("username", this.email);
 			this.nameUser=paciente.getNombre()+" "+paciente.getApellido();
-			return "index2.xhtml";
+			return "guardarCitaMedica.xhtml";
 		}else if(medico != null) {
 			HttpSession session = SessionUtils.getSession();
 			session.setAttribute("username", this.email);
@@ -56,7 +56,7 @@ public class GestionLoginBean implements Serializable {
 			HttpSession session = SessionUtils.getSession();
 			session.setAttribute("username", this.email);
 			this.nameUser=administrador.getNombre()+" "+administrador.getApellido();
-			return "crearMedico.xhtml";
+			return "index2.xhtml";
 		}
 		
 		return null;
@@ -66,7 +66,7 @@ public class GestionLoginBean implements Serializable {
 		HttpSession session = SessionUtils.getSession();
 		System.out.println(session.toString());
 		session.invalidate();
-		return "login.xhtml";
+		return "iniciar_sesion.xhtml";
 	}
 	
 	public Paciente validarLoginPaciente() {
@@ -151,9 +151,4 @@ public class GestionLoginBean implements Serializable {
 		this.gal = gal;
 	}
 
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
-	
-	
 }
